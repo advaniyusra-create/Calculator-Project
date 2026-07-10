@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(59, 70, 100);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        #answer-box {
+            width: 500px;
+            height: 120px;
+            background-color: rgb(24, 31, 50);
+            border-radius: 10px;
+            color: white;
+            padding: 20px;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+        }
+
+        .calculate-box {
+            width: 500px;
+            height: 400px;
+            background-color: rgb(37, 45, 68);
+            border-radius: 10px;
+            flex-wrap: wrap;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .calculate-box button {
+            width: 100px;
+            height: 50px;
+            background-color: rgb(234, 227, 219);
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 20px;
+            -webkit-box-shadow: 3px 3px 1px 0px #999999;
+            box-shadow: 3px 3px 1px 0px #999999;
+            border: none;
+            outline: none;
+        }
+
+        .calculate-box button:hover {
+            background-color: rgb(255, 248, 240);
+        }
+
+        .calculate-box button:nth-child(17) {
+            width: 220px;
+            height: 50px;
+            background-color: rgb(100, 114, 153);
+            -webkit-box-shadow: 3px 3px 1px 0px #414e71;
+            box-shadow: 3px 3px 1px 0px #414e71;
+            color: white;
+        }
+
+        .calculate-box button:nth-child(17):hover {
+            background-color: rgb(118, 134, 179);
+        }
+
+        .calculate-box button:nth-child(18) {
+            width: 220px;
+            height: 50px;
+            background-color: rgb(209, 63, 48);
+            -webkit-box-shadow: 3px 3px 1px 0px #8f2316;
+            box-shadow: 3px 3px 1px 0px #761b11;
+            color: white;
+        }
+
+        .calculate-box button:nth-child(18):hover {
+            background-color: rgb(228, 82, 66);
+        }
+
+        .calculate-box button:nth-child(4) {
+            width: 100px;
+            height: 50px;
+            background-color: rgb(100, 114, 153);
+            -webkit-box-shadow: 3px 3px 1px 0px #414e71;
+            box-shadow: 3px 3px 1px 0px #414e71;
+            color: white;
+        }
+
+        .calculate-box button:nth-child(4):hover {
+            background-color: rgb(118, 134, 179);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="answer-box"></div>
+    <div class="calculate-box">
+        <button id="but-1" onclick="button1()">7</button>
+        <button id="but-2" onclick="button2()">8</button>
+        <button id="but-3" onclick="button3()">9</button>
+        <button id="but-4" onclick="button4()">DEL</button>
+        <button id="but-5" onclick="button5()">4</button>
+        <button id="but-6" onclick="button6()">5</button>
+        <button id="but-7" onclick="button7()">6</button>
+        <button id="but-8" onclick="button8()">+</button>
+        <button id="but-9" onclick="button9()">1</button>
+        <button id="but-10" onclick="button10()">2</button>
+        <button id="but-11" onclick="button11()">3</button>
+        <button id="but-12" onclick="button12()">-</button>
+        <button id="but-13" onclick="button13()">.</button>
+        <button id="but-14" onclick="button14()">0</button>
+        <button id="but-15" onclick="button15()">÷</button>
+        <button id="but-16" onclick="button16()">X</button>
+        <button id="but-17" onclick="button17()">RESET</button>
+        <button id="but-18" onclick="button18()">=</button>
+    </div>
+
+
+
+
+    <script>
+        const answer = document.getElementById("answer-box")
+        function button1() {
+            if (document.getElementById('but-1')){
+                answer.innerText = answer.innerText + "7" 
+            }
+        }
+        function button2() {
+            if (document.getElementById('but-2')){
+                answer.innerText = answer.innerText + "8";
+            }
+        }
+        function button3() {
+            if (document.getElementById('but-3')){
+                answer.innerText = answer.innerText + "9"
+            }
+        }
+        function button4() {
+            if (document.getElementById('but-4')){
+                answer.innerText = answer.innerText.slice(0,-1)
+            }
+        }
+        function button5() {
+            if (document.getElementById('but-5')){
+                answer.innerText = answer.innerText + "4"
+            }
+        }
+        function button6() {
+            if (document.getElementById('but-6')){
+                answer.innerText = answer.innerText + "5"
+            }
+        }
+        function button7() {
+            if (document.getElementById('but-7')){
+                answer.innerText = answer.innerText + "6"
+            }
+        }
+        function button8() {
+            if (document.getElementById('but-8')){
+                answer.innerText = answer.innerText + "+"
+            }
+        }
+        function button9() {
+            if (document.getElementById('but-9')){
+                answer.innerText = answer.innerText + "1"
+            }
+        }
+        function button10() {
+            if (document.getElementById('but-10')){
+                answer.innerText = answer.innerText + "2"
+            }
+        }
+        function button11() {
+            if (document.getElementById('but-11')){
+                answer.innerText = answer.innerText + "3"
+            }
+        }
+        function button12() {
+            if (document.getElementById('but-12')){
+                answer.innerText = answer.innerText + "-"
+            }
+        }
+        function button13() {
+            if (document.getElementById('but-13')){
+                answer.innerText = answer.innerText + "."
+            }
+        }
+        function button14() {
+            if (document.getElementById('but-14')){
+                answer.innerText = answer.innerText + "0"
+            }
+        }
+        function button15() {
+            if (document.getElementById('but-15')){
+                answer.innerText = answer.innerText + "÷"
+            }
+        }
+        function button16() {
+            if (document.getElementById('but-16')){
+                answer.innerText = answer.innerText + "×"
+            }
+        }
+        function button17() {
+            if (document.getElementById('but-17')){
+                answer.innerText = ""
+            }
+        }
+        function button18() {
+            let Calculate = answer.innerText.replaceAll("×", '*')
+            Calculate = Calculate.replaceAll("÷", '/')
+            if (document.getElementById('but-18')){
+                answer.innerText = eval(Calculate)
+            }
+        }
+        
+    </script>
+</body>
+
+</html>
