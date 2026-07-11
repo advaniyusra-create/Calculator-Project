@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>Practice Calculator</title>
     <style>
         * {
             margin: 0;
@@ -108,124 +108,53 @@
 <body>
     <div id="answer-box"></div>
     <div class="calculate-box">
-        <button id="but-1" onclick="button1()">7</button>
-        <button id="but-2" onclick="button2()">8</button>
-        <button id="but-3" onclick="button3()">9</button>
-        <button id="but-4" onclick="button4()">DEL</button>
-        <button id="but-5" onclick="button5()">4</button>
-        <button id="but-6" onclick="button6()">5</button>
-        <button id="but-7" onclick="button7()">6</button>
-        <button id="but-8" onclick="button8()">+</button>
-        <button id="but-9" onclick="button9()">1</button>
-        <button id="but-10" onclick="button10()">2</button>
-        <button id="but-11" onclick="button11()">3</button>
-        <button id="but-12" onclick="button12()">-</button>
-        <button id="but-13" onclick="button13()">.</button>
-        <button id="but-14" onclick="button14()">0</button>
-        <button id="but-15" onclick="button15()">÷</button>
-        <button id="but-16" onclick="button16()">X</button>
-        <button id="but-17" onclick="button17()">RESET</button>
-        <button id="but-18" onclick="button18()">=</button>
+        <button onclick="button('7')">7</button>
+        <button onclick="button('8')">8</button>
+        <button onclick="button('9')">9</button>
+
+        <button onclick="del()">DEL</button>
+
+        <button onclick="button('4')">4</button>
+        <button onclick="button('5')">5</button>
+        <button onclick="button('6')">6</button>
+        <button onclick="button('+')">+</button>
+        <button onclick="button('1')">1</button>
+        <button onclick="button('2')">2</button>
+        <button onclick="button('3')">3</button>
+        <button onclick="button('-')">-</button>
+        <button onclick="button('.')">.</button>
+        <button onclick="button('0')">0</button>
+        <button onclick="button('÷')">÷</button>
+        <button onclick="button('×')">X</button>
+
+        <button onclick="reset('')">RESET</button>
+
+        <button onclick="calculate()">=</button>
     </div>
 
 
 
 
     <script>
+
         const answer = document.getElementById("answer-box")
-        function button1() {
-            if (document.getElementById('but-1')){
-                answer.innerText = answer.innerText + "7" 
-            }
+
+        function button(value){
+            answer.innerText = answer.innerText + value;
         }
-        function button2() {
-            if (document.getElementById('but-2')){
-                answer.innerText = answer.innerText + "8";
-            }
+        function reset(value){
+            answer.innerText = value
         }
-        function button3() {
-            if (document.getElementById('but-3')){
-                answer.innerText = answer.innerText + "9"
-            }
+        function del(value){
+            answer.innerText = answer.innerText.slice(0,-1)
         }
-        function button4() {
-            if (document.getElementById('but-4')){
-                answer.innerText = answer.innerText.slice(0,-1)
-            }
+        function calculate(value){
+            let calculate = answer.innerText
+            calculate = calculate.replaceAll("×", "*")
+            calculate = calculate.replaceAll("÷", "/")
+            answer.innerText = eval(calculate)
         }
-        function button5() {
-            if (document.getElementById('but-5')){
-                answer.innerText = answer.innerText + "4"
-            }
-        }
-        function button6() {
-            if (document.getElementById('but-6')){
-                answer.innerText = answer.innerText + "5"
-            }
-        }
-        function button7() {
-            if (document.getElementById('but-7')){
-                answer.innerText = answer.innerText + "6"
-            }
-        }
-        function button8() {
-            if (document.getElementById('but-8')){
-                answer.innerText = answer.innerText + "+"
-            }
-        }
-        function button9() {
-            if (document.getElementById('but-9')){
-                answer.innerText = answer.innerText + "1"
-            }
-        }
-        function button10() {
-            if (document.getElementById('but-10')){
-                answer.innerText = answer.innerText + "2"
-            }
-        }
-        function button11() {
-            if (document.getElementById('but-11')){
-                answer.innerText = answer.innerText + "3"
-            }
-        }
-        function button12() {
-            if (document.getElementById('but-12')){
-                answer.innerText = answer.innerText + "-"
-            }
-        }
-        function button13() {
-            if (document.getElementById('but-13')){
-                answer.innerText = answer.innerText + "."
-            }
-        }
-        function button14() {
-            if (document.getElementById('but-14')){
-                answer.innerText = answer.innerText + "0"
-            }
-        }
-        function button15() {
-            if (document.getElementById('but-15')){
-                answer.innerText = answer.innerText + "÷"
-            }
-        }
-        function button16() {
-            if (document.getElementById('but-16')){
-                answer.innerText = answer.innerText + "×"
-            }
-        }
-        function button17() {
-            if (document.getElementById('but-17')){
-                answer.innerText = ""
-            }
-        }
-        function button18() {
-            let Calculate = answer.innerText.replaceAll("×", '*')
-            Calculate = Calculate.replaceAll("÷", '/')
-            if (document.getElementById('but-18')){
-                answer.innerText = eval(Calculate)
-            }
-        }
-        
+
     </script>
 </body>
 
